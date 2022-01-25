@@ -1,12 +1,10 @@
 import React from "react";
-import { Form, Input, Button, message } from "antd";
+import { Form, Input, Button } from "antd";
 import api from "../utils/api";
 import { useHistory } from "react-router-dom";
+import showError from "../utils/showError";
 
 function SignUp() {
-  const showError = (errorMessage: string) => {
-    message.error(errorMessage);
-  };
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
@@ -28,7 +26,7 @@ function SignUp() {
   const onFinish = async (values: any) => {
     try {
       await api.post("/users/register", values);
-      history.push("/login");
+      history.push("/login", { newSignUp: true });
     } catch (error) {
       console.log({ error });
       showError((error as any).response.data.errorMessage);
