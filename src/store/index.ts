@@ -9,7 +9,7 @@ import UserReducer from "./reducers/userReducer";
 // 2- Records
 // 3- Categories
 
-interface AppState {
+export interface AppState {
   user: UserState;
   //   categories: any;
   //   records: any;
