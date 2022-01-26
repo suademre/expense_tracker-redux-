@@ -45,7 +45,6 @@ function Login() {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       // onFinishFailed={onFinishFailed}
-      autoComplete="off"
     >
       <h2 style={{ textAlign: "center", marginBottom: "40px" }}>
         Please Login

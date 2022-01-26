@@ -1,8 +1,10 @@
 //  Combine reducer medhodunu kullanarak uygulamamizin hangi state parcalarina ihtiyaci oldugunu belirticez
 
 import { combineReducers } from "redux";
+import { CategoryState } from "../types/category";
 import { UserState } from "../types/user";
-import UserReducer from "./reducers/userReducer";
+import categoryReducer from "./reducers/categoryReducer";
+import userReducer from "./reducers/userReducer";
 
 // Backenden 3 ayri veri tipi var
 // 1- Users
@@ -11,13 +13,13 @@ import UserReducer from "./reducers/userReducer";
 
 export interface AppState {
   user: UserState;
-  //   categories: any;
+  categories: CategoryState;
   //   records: any;
 }
 
 const rootReducer = combineReducers<AppState>({
-  user: UserReducer,
-  //   categories: () => {},
+  user: userReducer,
+  categories: categoryReducer,
   //   records: () => {},
 });
 

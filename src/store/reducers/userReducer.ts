@@ -6,7 +6,7 @@ const defaultState: UserState = {
   error: "",
 };
 
-const UserReducer = (state: UserState = defaultState, action: UserAction) => {
+const userReducer = (state: UserState = defaultState, action: UserAction) => {
   switch (action.type) {
     case "LOGIN_START":
       return { ...state, loading: true, error: "" };
@@ -19,4 +19,4 @@ const UserReducer = (state: UserState = defaultState, action: UserAction) => {
   }
 };
 
-export default UserReducer;
+export default userReducer;
